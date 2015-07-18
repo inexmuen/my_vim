@@ -13,7 +13,6 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/winmanager'
 Plugin 'vim-scripts/a.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'moll/vim-bbye'
 
 call vundle#end()
