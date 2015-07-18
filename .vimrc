@@ -15,10 +15,10 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'pydiction'
+Plugin 'OmniCppComplete'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
-filetype plugin indent on
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 syntax enable
 set number
 set ruler
@@ -29,6 +29,22 @@ set expandtab
 set encoding=utf-8
 set autoindent
 
+"自动补全 
+
+filetype plugin indent off
+set noautoindent
+set nosmartindent
+set nocindent
+autocmd FileType python setlocal completeopt-=preview
+set completeopt=longest,menu
+""自动补全命令时候使用菜单式匹配列表 
+set wildmenu
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType java set omnifunc=javacomplete#Complet
 
 
 " nerdtree设置
