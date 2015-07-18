@@ -14,9 +14,11 @@ Plugin 'vim-scripts/winmanager'
 Plugin 'vim-scripts/a.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'moll/vim-bbye'
+Plugin 'pydiction'
 
 call vundle#end()
 filetype plugin indent on
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 syntax enable
 set number
 set ruler
@@ -25,6 +27,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set encoding=utf-8
+set autoindent
 
 
 
@@ -131,3 +134,6 @@ nnoremap ]b :bn<CR>
 " Bbye设置
 " 由于原生的:bd在删除当前buffer时会将整个窗口关闭，故使用Bbye的:Bd
 nnoremap bd :Bd<CR>
+
+let g:pydiction_location='/Users/joshua/.vim/bundle/pydiction'
+let g:pydiction_menu_height = 20
