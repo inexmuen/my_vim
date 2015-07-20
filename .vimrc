@@ -8,7 +8,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/taglist.vim'
+" Plugin 'vim-scripts/taglist.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/winmanager'
 Plugin 'vim-scripts/a.vim'
@@ -17,6 +17,7 @@ Plugin 'moll/vim-bbye'
 Plugin 'pydiction'
 Plugin 'OmniCppComplete'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 syntax enable
@@ -66,11 +67,11 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeWinSize=31
 
 " taglist设置
-let Tlist_Show_One_File=1 " 0为同时显示多个文件函数列表,1则只显示当前文件函数列表
-let Tlist_Auto_Update=1
-let Tlist_File_Fold_Auto_Close=1 " 非当前文件，函数列表折叠隐藏
-let Tlist_Exit_OnlyWindow=1 "如果taglist是最后一个窗口，则退出vim 
-let Tlist_Auto_Update=1            "Automatically update the taglist to include newly edited files.
+" let Tlist_Show_One_File=1 " 0为同时显示多个文件函数列表,1则只显示当前文件函数列表
+" let Tlist_Auto_Update=1
+" let Tlist_File_Fold_Auto_Close=1 " 非当前文件，函数列表折叠隐藏
+" let Tlist_Exit_OnlyWindow=1 "如果taglist是最后一个窗口，则退出vim 
+" let Tlist_Auto_Update=1            "Automatically update the taglist to include newly edited files.
 "把taglist窗口放在屏幕的右侧，缺省在左侧
 "let Tlist_Use_Right_Window=1 
 "显示taglist菜单
@@ -78,11 +79,16 @@ let Tlist_Auto_Update=1            "Automatically update the taglist to include 
 "启动vim自动打开taglist
 "let Tlist_Auto_Open=1
 " ctags, 指定tags文件的位置,让vim自动在当前或者上层文件夹中寻找tags文件
-set tags=tags
+" set tags=tags
 " 添加系统调用路径
-set tags+=/usr/include/tags
+"set tags+=/usr/include/tags
 "键绑定，刷新tags
-nmap tg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q *<CR>:set tags+=./tags<CR>
+"nmap tg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q *<CR>:set tags+=./tags<CR>
+
+" tagbar config
+map <leader>g :TagbarToggle<CR>
+let g:tagbar_auto_focus=1
+
 
 " Cscope 设置
 if has("cscope")
