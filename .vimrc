@@ -1,161 +1,308 @@
-set nocompatible
-filetype off
+"自己定义vimrc常见设置和一些键位的设置
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"---------------- 加载插件管理文件 --------------------
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
 
-Plugin 'gmarik/Vundle.vim'
+" 在插入模式下MAC下的delete不能删除问题
+set backspace=2
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-" Plugin 'vim-scripts/taglist.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/winmanager'
-Plugin 'vim-scripts/a.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'moll/vim-bbye'
-Plugin 'pydiction'
-Plugin 'OmniCppComplete'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'majutsushi/tagbar'
+"--------------- leader设定 -------------
+let mapleader = ','
+let g:mapleader = ','
 
-call vundle#end()
-syntax enable
-set number
-set ruler
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+"------------------------------- 基本设置 -----------------------------------
+
+"开启语法高亮
+"syntax enable 该命令只在当前文件有效
+syntax on " 所有缓冲区文件都有效
+
+"-------------- 文件检测 ----------------------
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
+"colorscheme molokai          " 配色主题
+
+set autoread                 " 文件修改之后自动载入。
+set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
+
+set laststatus=2
+"set confirm                  " 取消光标闪烁
+set noswapfile               " 关闭交换文件
+
+set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
+
+set cursorcolumn             " 突出显示当前列
+set cursorline               " 突出显示当前行
+
+set title 
+set novisualbell
+set noerrorbells
+
+set magic
+
+set ruler                    " 显示当前行号和列号
+set number                   " 显示行号
+set nowrap                   " 取消换行
+
+set showcmd                  " 在状态栏显示正在输入的命令
+set showmode                 " 显示vim模式
+
+set showmatch                " 括号匹配，高亮
+set matchtime=1         
+
+set hlsearch                 " 高亮搜索的文本
+set incsearch                " 即时搜索
+set ignorecase               " 搜索忽略大小写
+set smartcase                " 有一个或以上大写字母时仍大小敏感
+
+set foldenable               " 代码折叠
+set foldmethod=indent
+set foldlevel=99             
+
+" 代码折叠自定义快捷键
+let g:FoldMethod = 0
+map <leader>zz :call ToggleFold()<cr>
+fun! ToggleFold()
+    if g:FoldMethod == 0
+        exe "normal! zM"
+        let g:FoldMethod = 1
+    else
+        exe "normal! zR"
+        let g:FoldMethod = 0
+    endif
+endfun
+
+set smartindent              " 智能缩进
+set autoindent               " 自动缩进
+
+"------------------------------- tab 相关设置 ---------------------
+set tabstop=4                " 设置tab的宽度
+set shiftwidth=4             " 每一次缩进对应的空格数
+set softtabstop=4            " 按退格键是可以一次删除4个空格
+set smarttab                 
+set expandtab                " 将tab自动转化为空格
+set shiftround               " 缩进时，取整
+
+"------------------------------- 文件编码 -------------------------
 set encoding=utf-8
-set autoindent
+set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbkgb2312,cp936 " 自动判断编码
+set helplang=cn
+set ffs=unix,mac,dos
 
-"自动补全 
+set formatoptions+=B          " 合并两行中文时，不在中间加空格
+set termencoding=utf-8        " 终端编码
 
-filetype plugin indent off
-set noautoindent
-set nosmartindent
-set nocindent
-autocmd FileType python setlocal completeopt-=preview
-set completeopt=longest,menu
-""自动补全命令时候使用菜单式匹配列表 
+"------------------------------- 其他设置 -------------------------
+set completeopt=longest,menu  " 让vim的补全菜单和ide一致
 set wildmenu
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType java set omnifunc=javacomplete#Complet
+set wildignore=*.0,*~,*.pyc,*.class
+
+autocmd! bufwritepost .vimrc source % " vimrc 文件修改后自动加载
+
+"------------------------------- 自定义快捷键设置 -----------------
+
+" 关闭方向键，使用hjkl
+map <Left> <Nop>             
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop> 
+
+" 行首 和 行尾 map
+noremap H ^
+noremap L $
+
+" 切换到命令模式map 
+noremap ; :
+
+" 插入模式下 kj 映射到 Esc
+inoremap kj <Esc>       
+
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>w :wq<CR>
+
+" 分屏切换
+noremap w<up> <c-w><up>
+noremap wk <c-w><up>
+noremap w<left> <c-w><left>
+noremap wh <c-w><left>
+noremap w<right> <c-w><right>
+noremap wl <c-w><right>
+noremap w<down> <c-w><down>
+noremap wj <c-w><down>
+
+" python 文件的一般设置
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 
 
-" nerdtree设置
-" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
-" let NERDTreeAutoCenter=1
-" 指定鼠标模式（1.双击打开；2.单目录双文件；3.单击打开）
-" let NERDTreeMouseMode=2
-" 是否默认显示书签列表
-" let NERDTreeShowBookmarks=1
-" 是否默认显示文件
-let NERDTreeShowFiles=1
-" 是否默认显示隐藏文件
-" let NERDTreeShowHidden=1
-" 是否默认显示行号
+" 定义函数AutoSetFileHead，自动插入文件头
+autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
+function! AutoSetFileHead()
+"如果文件类型为.sh文件
+if &filetype == 'sh'
+    call setline(1, "\#!/bin/bash")
+endif
+
+"如果文件类型为python
+if &filetype == 'python'
+    call setline(1, "\#!/usr/bin/env python")
+    call append(1, "\# -*- coding: utf-8 -*- ")
+endif
+    normal G
+    normal o
+    normal o
+endfunc
+
+"set some keyword to highlight
+if has("autocmd")
+    "Highlight TODO, FIXME, NOTE, etc.
+    if v:version > 701
+        autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
+        autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
+    endif
+endif
+
+" ----------------------- 插件设置 ------------------------------
+
+" *********************** NERDTree 插件设置 *********************
+" vim启动时触发
+" autocmd vimenter * NERDTree
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowLineNumbers=1
-" 窗口位置（'left' or 'right'）
-" let NERDTreeWinPos='left'
-" 窗口宽
-let NERDTreeWinSize=31
+let NERDTreeIgnore=['\.pyc$', '\~$']
+" 分屏打开文件
+let g:NERDTreeMapOpenVSplit = 'v' 
+let g:NERDTreeMapOpenSplit = 's'   
 
-" taglist设置
-" let Tlist_Show_One_File=1 " 0为同时显示多个文件函数列表,1则只显示当前文件函数列表
-" let Tlist_Auto_Update=1
-" let Tlist_File_Fold_Auto_Close=1 " 非当前文件，函数列表折叠隐藏
-" let Tlist_Exit_OnlyWindow=1 "如果taglist是最后一个窗口，则退出vim 
-" let Tlist_Auto_Update=1            "Automatically update the taglist to include newly edited files.
-"把taglist窗口放在屏幕的右侧，缺省在左侧
-"let Tlist_Use_Right_Window=1 
-"显示taglist菜单
-"let Tlist_Show_Menu=1
-"启动vim自动打开taglist
-"let Tlist_Auto_Open=1
-" ctags, 指定tags文件的位置,让vim自动在当前或者上层文件夹中寻找tags文件
-" set tags=tags
-" 添加系统调用路径
-"set tags+=/usr/include/tags
-"键绑定，刷新tags
-"nmap tg :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q *<CR>:set tags+=./tags<CR>
-
-" tagbar config
+" *********************** tagbar 插件设置 ***********************
 map <leader>g :TagbarToggle<CR>
 let g:tagbar_auto_focus=1
 
+" *********************** taglist 插件设置 **********************
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Auto_Open=0
+let Tlist_Auto_Highlight_Tag=1
+let Tlist_Use_Right_Window=1
+let Tlist_WinWidth=35
 
-" Cscope 设置
-if has("cscope")
-    set csprg=/usr/bin/cscope   "指定用来执行cscope的命令
-    set csto=0                  " 设置cstag命令查找次序：0先找cscope数据库再找标签文件；1先找标签文件再找cscope数据库"
-    set cst                     " 同时搜索cscope数据库和标签文件"
-    set cscopequickfix=s-,c-,d-,i-,t-,e-    " 使用QuickFix窗口来显示cscope查找结果"
-    set nocsverb
-    if filereadable("cscope.out")    " 若当前目录下存在cscope数据库，添加该数据库到vim
-        cs add cscope.out
-    elseif $CSCOPE_DB != ""            " 否则只要环境变量CSCOPE_DB不为空，则添加其指定的数据库到vim
-        cs add $CSCOPE_DB
+" *********************** 快速跳转 ******************************
+let g:EasyMotion_smartcase=1
+map <leader><leader>h <Plug>(easymotion-linebackward)
+map <leader><leader>j <Plug>(easymotion-j)
+map <leader><leader>k <Plug>(easymotion-k)
+map <leader><leader>l <Plug>(easymotion-lineforward)
+map <leader><leader>. <Plug>(easymotion-repeat)
+
+" *********************** 语法检查 ******************************
+let g:syntastic_error_symbol='>>'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_highlighting=1
+let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_python_pep8_args='--ignore=E501,E225'
+
+let g:syntastic_always_populate_loc_list=0
+let g:syntastic_auto_loc_list=0
+let g:syntastic_loc_list_height=3
+
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        "Nothing was closed, open syntastic error location panel
+        Errors
     endif
-    set csverb
+endfunction
+
+nnoremap <leader>s :call ToggleErrors()<cr>
+
+
+" *********************** 自动补全引号等插件设置 ****************
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+
+" python 相关语法检查
+let g:pyflakes_use_quickfix = 0
+let python_highlight_all = 1
+
+" *********************** markdown 插件设置 *********************
+let g:vim_markdown_folding_disable = 1
+
+" 多光标选中编辑设置
+" let g:multi_cursor_use_default_mapping = 0
+" let g:multi_cursor_next_key='<C-m>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
+
+" *********************** 快速注释 ******************************
+let g:NERDSpaceDelims = 1
+
+" *********************** 文件搜索插件 **************************
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f : CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \}
+
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+" ctrlp相关插件 函数搜索
+nnoremap <Leader>fu: CtrlPFunky<Cr>
+nnoremap <Leader>fU:execute 'CtrlpFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
+" *********************** pyflakes_vim 插件设置 *****************
+let g:pyflakes_user_quickfix=0
+
+" *********************** python-syntax *************************
+let python_highlight_all=1
+
+" *********************** vim-markdown **************************
+let g:vim_mardown_folding_disabled=1
+
+" *********************** 自动补全插件 **************************
+let g:ycm_key_list_select_completion=['<Down>']
+let g:ycm_key_lsit_previous_completion=['<Up>']
+let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
+let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+" 跳转到定义处, 分屏打开
+let g:ycm_goto_buffer_command = 'vertical-split'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+" 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
+" old version
+if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
+    let g:ycm_global_ycm_extra_conf ="~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
 endif
-map <F4>:!cscope -Rbq<CR>:cs add ./cscope.out .<CR><CR><CR> :cs reset<CR>
-"对:cs find c等Cscope查找命令进行映射
-nmap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
-nmap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR><CR>
-nmap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR><CR>
-nmap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR><CR>
-nmap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>
-" 设定是否使用 quickfix 窗口来显示 cscope 结果
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+" new version
+if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+endif
 
-" WinManager设置
-" NERD_Tree集成到WinManager
-let g:NERDTree_title="[NERDTree]" 
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
- 
-function! NERDTree_IsValid()
-    return 1
-endfunction
- 
-" 键盘映射，同时加入防止因winmanager和nerdtree冲突而导致空白页的语句
-nmap wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
-" 设置winmanager的宽度，默认为25
-let g:winManagerWidth=30 
-" 窗口布局
-let g:winManagerWindowLayout='NERDTree|TagList'
-" 如果所有编辑文件都关闭了，退出vim
-let g:persistentBehaviour=0
-
-" airline设置
-set laststatus=2
-" 使用powerline打过补丁的字体
-let g:airline_powerline_fonts = 1
-" 开启tabline
-let g:airline#extensions#tabline#enabled = 1
-" tabline中当前buffer两端的分隔字符
-let g:airline#extensions#tabline#left_sep = ' '
-" tabline中未激活buffer两端的分隔字符
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" tabline中buffer显示编号
-let g:airline#extensions#tabline#buffer_nr_show = 1
-" 映射切换buffer的键位
-nnoremap [b :bp<CR>
-nnoremap ]b :bn<CR>
-
-" Bbye设置
-" 由于原生的:bd在删除当前buffer时会将整个窗口关闭，故使用Bbye的:Bd
-nnoremap bd :Bd<CR>
-
-let g:pydiction_location='/Users/joshua/.vim/bundle/pydiction'
-let g:pydiction_menu_height = 20
+" 直接触发自动补全 insert模式下
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" 黑名单,不启用
+let g:ycm_filetype_blacklist = {
+            \ 'tagbar' : 1,
+            \ 'gitcommit' : 1,
+            \}

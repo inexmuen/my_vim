@@ -1,0 +1,50 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"------------- 插件列表 ---------------------------
+"插件设置和vim基本设置单独放置
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'majutsushi/tagbar'
+Plugin 'taglist.vim'
+Plugin 'basepi/vim-conque'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-commentary'
+Plugin 'sjl/gundo.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+
+" python
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'hdima/python-syntax'
+Plugin 'pep8'
+Plugin 'python.vim--Vasiliev'
+Plugin 'hynek/vim-python-pep8-indent'
+
+" golang
+Plugin 'fatih/vim-go'
+Plugin 'dgryski/vim-godef'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+
+" markdown
+Plugin 'plasticboy/vim-markdown'
+
+" 多光标
+Plugin 'terryma/vim-multiple-cursors'
+
+" 快速注释
+Plugin 'scrooloose/nerdcommenter'
+
+call vundle#end()
+filetype plugin indent on
