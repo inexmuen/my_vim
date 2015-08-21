@@ -25,6 +25,7 @@ k+j						|insert to normal
 ;/SHIFT+;				|切换到命令行模式
 H/SHIFT+右箭头 			|行首
 L/SHIFT+左箭头			|行尾	
+,+p                     |打开文件搜索栏
 
 ----
 
