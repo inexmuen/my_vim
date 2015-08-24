@@ -26,6 +26,7 @@ k+j						|insert to normal
 H/SHIFT+右箭头 			|行首
 L/SHIFT+左箭头			|行尾	
 ,+p                     |打开文件搜索栏
+,+j+d                   |跳转到变量定义处
 
 ----
 
