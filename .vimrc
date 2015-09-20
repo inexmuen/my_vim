@@ -137,6 +137,9 @@ noremap wj <c-w><down>
 " python 文件的一般设置
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 
+" php自动完成
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
 
 " 定义函数AutoSetFileHead，自动插入文件头
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
