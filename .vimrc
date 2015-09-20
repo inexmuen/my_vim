@@ -140,6 +140,14 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 " php自动完成
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
+" 只有在是PHP文件时，才启用PHP补全
+au FileType php call AddPHPFuncList()
+function AddPHPFuncList()
+    set dictionary-=/Users/joshua/.vim/funclist.txt
+dictionary+=/Users/joshua/.vim/funclist.txt
+    set complete-=k complete+=k
+endfunction
+
 
 " 定义函数AutoSetFileHead，自动插入文件头
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
