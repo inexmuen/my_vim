@@ -32,6 +32,8 @@ L/SHIFT+左箭头			|行尾
 
 vim安装YouCompleteMe插件
 
+YouCompleteMe插件要求vim版本7.4
+
 ```
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
