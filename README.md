@@ -41,6 +41,9 @@ git submodule update --init --recursive
 sh install.sh
 ```
 OK!
+运行install.sh的时候报错:fatal error: '__debug'
+参考:http://stackoverflow.com/questions/29529455/missing-c-header-debug-after-updating-osx-command-line-tools-6-3
+升级command lint tools到6.3.1
 
 ![screen](screen.png)
 
