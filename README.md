@@ -3,7 +3,6 @@ my vim
 > This is my vim config files
 
 ref:[Vim改变生活，插件改变Vim](http://fancyseeker.com/?p=592)
-http://www.oschina.net/question/2012764_237658
 
 ----
 
@@ -32,6 +31,7 @@ L/SHIFT+左箭头			|行尾
 ----
 
 vim安装YouCompleteMe插件
+参考:http://www.oschina.net/question/2012764_237658
 
 YouCompleteMe插件要求vim版本7.4
 
