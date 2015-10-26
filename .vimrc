@@ -233,6 +233,9 @@ endfunction
 
 nnoremap <leader>s :call ToggleErrors()<cr>
 
+" *********************** autopep8语法检查 ******************************
+let g:autopep8_max_line_length=79
+
 
 " *********************** 自动补全引号等插件设置 ****************
 au FileType python let b:delimitMate_nesting_quotes = ['"']

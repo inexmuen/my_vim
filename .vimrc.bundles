@@ -29,6 +29,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kevinw/pyflakes-vim'
 Plugin 'hdima/python-syntax'
 Plugin 'pep8'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'python.vim--Vasiliev'
 Plugin 'hynek/vim-python-pep8-indent'
 
