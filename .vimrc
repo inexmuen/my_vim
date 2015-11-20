@@ -240,6 +240,9 @@ let g:autopep8_max_line_length=79
 " *********************** 自动补全引号等插件设置 ****************
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
+" ********************** 全局搜索 ***********************
+let g:ag_prg = "ag --nogroup --nocolor --column"
+
 
 " python 相关语法检查
 let g:pyflakes_use_quickfix = 0

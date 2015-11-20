@@ -47,5 +47,8 @@ Plugin 'terryma/vim-multiple-cursors'
 " 快速注释
 Plugin 'scrooloose/nerdcommenter'
 
+" 全局搜索
+Plugin 'rking/ag.vim'
+
 call vundle#end()
 filetype plugin indent on
