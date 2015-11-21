@@ -47,6 +47,9 @@ Plugin 'terryma/vim-multiple-cursors'
 " 快速注释
 Plugin 'scrooloose/nerdcommenter'
 
+" 对齐线
+Plugin 'nathanaelkane/vim-indent-guides'
+
 " 全局搜索
 Plugin 'rking/ag.vim'
 

@@ -24,7 +24,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-colorscheme Tomorrow-Night-Eighties         " 配色主题
+colorscheme molokai         " 配色主题
 
 set autoread                 " 文件修改之后自动载入。
 set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
@@ -300,6 +300,18 @@ let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
 let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
 let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+" ********************** 对齐线设置 ****************************
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1 
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+hi IndentGuidesOdd guibg=red ctermbg=3
+
+hi IndentGuidesEven guibg=green ctermbg=4
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'vertical-split'
