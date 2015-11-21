@@ -302,7 +302,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符�
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " ********************** 对齐线设置 ****************************
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1 
 set ts=4 sw=4 et
