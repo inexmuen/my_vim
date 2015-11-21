@@ -24,7 +24,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-colorscheme molokai         " 配色主题
+colorscheme Tomorrow-Night-Eighties         " 配色主题
 
 set autoread                 " 文件修改之后自动载入。
 set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
@@ -141,11 +141,11 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " 只有在是PHP文件时，才启用PHP补全
-au FileType php call AddPHPFuncList()
-function AddPHPFuncList()
-    set dictionary-=/Users/joshua/.vim/funclist.txt dictionary+=/Users/joshua/.vim/funclist.txt
-    set complete-=k complete+=k
-endfunction
+" au FileType php call AddPHPFuncList()
+" function AddPHPFuncList()
+"     set dictionary-=/Users/joshua/.vim/funclist.txt dictionary+=/Users/joshua/.vim/funclist.txt
+"     set complete-=k complete+=k
+" endfunction
 
 
 " 定义函数AutoSetFileHead，自动插入文件头
