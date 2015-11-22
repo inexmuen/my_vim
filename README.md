@@ -29,6 +29,8 @@ L/SHIFT+左箭头			    |行尾
 ,+j+d                       |跳转到变量定义处
 F8                          |按PEP8标准格式化文件
 :Ag create_order --python   |全局搜索"create_order"
+'.                          |移动光标到上一次的修改行
+`.                          |移动光标到上一次的修改点
 
 ----
 
