@@ -329,6 +329,7 @@ endif
 
 " 直接触发自动补全 insert模式下
 " let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_list_select_completion=['<tab>', '<Down>']
 " 黑名单,不启用
 let g:ycm_filetype_blacklist = {
             \ 'tagbar' : 1,
