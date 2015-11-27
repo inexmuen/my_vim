@@ -33,7 +33,8 @@ F8                          |按PEP8标准格式化文件
 `.                          |移动光标到上一次的修改点
 control+y/g'Z               |可跨文件跳转到上次修改位置(last_edit_maker提供功能)
 :new/e/vs/sp filename       |新建/当前tab/纵向/横向打开 filename
-CTRL+C & COMMAND+V          |vim复制，主机粘贴
+CTRL+c & COMMAND+v          |vim复制，主机粘贴
+COMMAND+c & CTRL+v          |主机复制，vim粘贴
 
 ----
 

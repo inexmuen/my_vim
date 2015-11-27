@@ -345,4 +345,8 @@ augroup LastEditMarker
 augroup END
 
 " vim，主机复制共享
-vmap <C-c> "+y"
+vmap <C-c> "+y
+vmap <C-x> "+c    
+vmap <C-v> c<ESC>"+p    
+imap <C-v> <C-r><C-o>+    
+nmap <C-v> "+p
