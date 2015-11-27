@@ -22,7 +22,7 @@ k+j						    |insert to normal
 :vs						    |纵向切屏
 :sp						    |横向切屏
 ,s						    |语法错误信息
-;/SHIFT+;				    |切换到命令行模式
+;/SHIFT+;				    |nornal切换到命令行模式
 H/SHIFT+右箭头 			    |行首
 L/SHIFT+左箭头			    |行尾	
 ,+p                         |打开文件搜索栏
@@ -31,6 +31,8 @@ F8                          |按PEP8标准格式化文件
 :Ag create_order --python   |全局搜索"create_order"
 '.                          |移动光标到上一次的修改行
 `.                          |移动光标到上一次的修改点
+control+y/g'Z               |可跨文件跳转到上次修改位置(last_edit_maker提供功能)
+:e/vs/sp filename           |当前tab/纵向/横向 打开filename
 
 ----
 
