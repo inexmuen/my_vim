@@ -32,7 +32,7 @@ F8                          |按PEP8标准格式化文件
 '.                          |移动光标到上一次的修改行
 `.                          |移动光标到上一次的修改点
 control+y/g'Z               |可跨文件跳转到上次修改位置(last_edit_maker提供功能)
-:e/vs/sp filename           |当前tab/纵向/横向 打开filename
+:new/e/vs/sp filename       |新建/当前tab/纵向/横向打开 filename
 
 ----
 
