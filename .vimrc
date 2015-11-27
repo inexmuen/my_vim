@@ -343,3 +343,6 @@ augroup LastEditMarker
     autocmd!
     autocmd InsertLeave * normal mZ
 augroup END
+
+" vim，主机复制共享
+vmap <C-c> "+y"
