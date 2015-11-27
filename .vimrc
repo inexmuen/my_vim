@@ -335,3 +335,11 @@ let g:ycm_filetype_blacklist = {
             \ 'tagbar' : 1,
             \ 'gitcommit' : 1,
             \}
+
+" last_edit_marker.vim设置
+nmap <C-y> g'Z
+
+augroup LastEditMarker
+    autocmd!
+    autocmd InsertLeave * normal mZ
+augroup END

@@ -53,5 +53,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " 全局搜索
 Plugin 'rking/ag.vim'
 
+" 跳转到上次修改的地方
+Plugin 'vim-scripts/last_edit_marker.vim'
+
 call vundle#end()
 filetype plugin indent on
