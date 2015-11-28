@@ -33,6 +33,9 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'python.vim--Vasiliev'
 Plugin 'hynek/vim-python-pep8-indent'
 
+" php
+Plugin 'shawncplus/phpcomplete.vim'
+
 " golang
 Plugin 'fatih/vim-go'
 Plugin 'dgryski/vim-godef'
