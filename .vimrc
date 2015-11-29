@@ -352,3 +352,11 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p    
 imap <C-v> <C-r><C-o>+    
 nmap <C-v> "+p
+
+" powerline设置
+set guifont=PowerlineSymbols\ for\ Powerline
+set nocompatible
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
+let Powerline_symbols='compatible'    

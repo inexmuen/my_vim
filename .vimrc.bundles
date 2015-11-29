@@ -59,5 +59,8 @@ Plugin 'rking/ag.vim'
 " 跳转到上次修改的地方
 Plugin 'vim-scripts/last_edit_marker.vim'
 
+" powerline
+Plugin 'powerline/powerline'
+
 call vundle#end()
 filetype plugin indent on
