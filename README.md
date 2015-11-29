@@ -35,6 +35,7 @@ control+y/g'Z               |可跨文件跳转到上次修改位置(last_edit_m
 :new/e/vs/sp filename       |新建/当前tab/纵向/横向打开 filename
 CTRL+c & COMMAND+v          |vim复制，主机粘贴
 COMMAND+c & CTRL+v          |主机复制，vim粘贴
+,a                          |insert模式下php文件autocomplete，由phpcomplete的<C-x><C-o> inoremap而来
 
 ----
 

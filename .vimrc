@@ -139,6 +139,8 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 
 " php自动完成
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" 当文件类型为php时，将系统自动补全的快捷键更改为 ,a
+autocmd FileType php inoremap <leader>a <C-x><C-o>
 
 " 只有在是PHP文件时，才启用PHP补全
 au FileType php call AddPHPFuncList()
