@@ -62,5 +62,11 @@ Plugin 'vim-scripts/last_edit_marker.vim'
 " powerline
 Plugin 'powerline/powerline'
 
+" gitgutter
+Plugin 'airblade/vim-gitgutter'
+
+" gitv
+Plugin 'vim-scripts/gitv'
+
 call vundle#end()
 filetype plugin indent on
