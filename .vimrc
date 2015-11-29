@@ -352,3 +352,17 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p    
 imap <C-v> <C-r><C-o>+    
 nmap <C-v> "+p
+
+" powerline设置
+set guifont=PowerlineSymbols\ for\ Powerline
+set nocompatible
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
+let Powerline_symbols='compatible'    
+
+" gitgutter设置
+let g:gitgutter_map_keys = 0
+let g:gitgutter_enabled = 0
+let g:gitgutter_highlight_lines = 1
+nnoremap <leader>gs :GitGutterToggle<CR>
