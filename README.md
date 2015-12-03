@@ -38,6 +38,7 @@ COMMAND+c & CTRL+v          |主机复制，vim粘贴
 ,a                          |insert模式下php文件autocomplete，由phpcomplete的<C-x><C-o> inoremap而来
 ,gs                         |显示文件的git更改,类似于git diff命令的显示效果
 :Gitv                       |显示项目版本库的更改，类似于tig的效果
+:Gblame                     |在git项目中查看每行最后的更改情况
 
 ----
 
