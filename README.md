@@ -13,6 +13,7 @@ key|作用
 ,+g						    |tagbar
 ,+n						    |nerdtree
 w+[hjkl]				    |分屏切换
+gt                          |切换tab
 (文件名上面)(v/Enter)		|在(新的/当前)分屏中打开文件
 ,+q					    	|关闭对应分屏，退出不保存
 ,+w						    |关闭并保存
