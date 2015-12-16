@@ -13,6 +13,7 @@ key|作用
 ,+g						    |tagbar
 ,+n						    |nerdtree
 w+[hjkl]				    |分屏切换
+gt                          |切换tab
 (文件名上面)(v/Enter)		|在(新的/当前)分屏中打开文件
 ,+q					    	|关闭对应分屏，退出不保存
 ,+w						    |关闭并保存
@@ -32,7 +33,7 @@ F8                          |按PEP8标准格式化文件
 '.                          |移动光标到上一次的修改行
 `.                          |移动光标到上一次的修改点
 control+y/g'Z               |可跨文件跳转到上次修改位置(last_edit_maker提供功能)
-:new/e/vs/sp filename       |新建/当前tab/纵向/横向打开 filename
+:new/e/vs/sp/tabe filename  |新建/当前tab/纵向/横向/新tab 打开 filename
 CTRL+c & COMMAND+v          |vim复制，主机粘贴
 COMMAND+c & CTRL+v          |主机复制，vim粘贴
 ,a                          |insert模式下php文件autocomplete，由phpcomplete的<C-x><C-o> inoremap而来
