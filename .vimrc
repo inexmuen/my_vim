@@ -149,6 +149,22 @@ function! AddPHPFuncList()
     set complete-=k complete+=k
 endfunction
 
+" phpqa
+let g:phpqa_php_cmd='php'
+let g:phpqa_codesniffer_args = "--standard=PSR2" " Set the codesniffer args
+let g:phpqa_codesniffer_cmd='phpcs' " PHP Code Sniffer binary (default = \"phpcs\")
+let g:phpqa_messdetector_cmd='phpmd' " PHP Mess Detector binary (default = \"phpmd\")
+let g:phpqa_messdetector_autorun = 0 " Don't run messdetector on save (default = 1)
+let g:phpqa_codesniffer_autorun = 0 " Don't run codesniffer on save (default = 1)
+let g:phpqa_codecoverage_autorun = 1 " Show code coverage on load (default = 0)
+" Clover code coverage XML file
+" let g:phpqa_codecoverage_file = \"/path/to/clover.xml\"
+" " Show markers for lines that ARE covered by tests (default = 1)
+let g:phpqa_codecoverage_showcovered = 0
+ 
+" Stop the location list opening automatically
+let g:phpqa_open_loc = 0
+
 
 " 定义函数AutoSetFileHead，自动插入文件头
 autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
