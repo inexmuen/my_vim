@@ -63,13 +63,19 @@ OK!
 安装php code_sniffer
 
 首先安装pear
+
+```
 sudo php /usr/lib/php/install-pear-nozlib.phar
 sudo pear config-set php_ini /private/etc/php.ini
 sudo pecl config-set php_ini /private/etc/php.ini
 sudo pear upgrade-all
+```
 
 安装PHP_CodeSniffer
+
+```
 pear install PHP_CodeSniffer
+```
 
 运行`phpcs`，如果报错:
 
@@ -82,6 +88,8 @@ PHP Fatal error:  Class 'PHP_CodeSniffer_CLI' not found in /usr/bin/phpcs on lin
 则是由于/usr/lib/php/pear没有添加到php的`include_path`
 
 修改`/etc/php.ini`,添加`include_path = "/usr/lib/php/pear"`，运行`phpcs -h`无误即可
+
+code_sniffer安装完毕
 
 ![screen](screen.png)
 
