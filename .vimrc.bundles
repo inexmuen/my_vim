@@ -35,6 +35,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 
 " php
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'joonty/vim-phpqa'
 
 " golang
 Plugin 'fatih/vim-go'

@@ -40,6 +40,8 @@ COMMAND+c & CTRL+v          |主机复制，vim粘贴
 ,gs                         |显示文件的git更改,类似于git diff命令的显示效果
 :Gitv                       |显示项目版本库的更改，类似于tig的效果
 :Gblame                     |在git项目中查看每行最后的更改情况
+:Phpcs                      |run code sniffer(代码规范检查, 要求太严格，推荐不用)
+:Phpmd                      |run mess detector (will ask for a rule XML file if not set，推荐不用)
 
 ----
 
@@ -57,6 +59,29 @@ OK!
 运行install.sh的时候报错:fatal error: '__debug'
 参考:http://stackoverflow.com/questions/29529455/missing-c-header-debug-after-updating-osx-command-line-tools-6-3
 升级command lint tools到6.3.1
+
+安装php code_sniffer
+
+首先安装pear
+sudo php /usr/lib/php/install-pear-nozlib.phar
+sudo pear config-set php_ini /private/etc/php.ini
+sudo pecl config-set php_ini /private/etc/php.ini
+sudo pear upgrade-all
+
+安装PHP_CodeSniffer
+pear install PHP_CodeSniffer
+
+运行`phpcs`，如果报错:
+
+```
+PHP Warning:  include_once(PHP/CodeSniffer/CLI.php): failed to open stream: No such file or directory in /usr/bin/phpcs on line 21
+PHP Warning:  include_once(): Failed opening 'PHP/CodeSniffer/CLI.php' for inclusion (include_path='.:') in /usr/bin/phpcs on line 21
+PHP Fatal error:  Class 'PHP_CodeSniffer_CLI' not found in /usr/bin/phpcs on line 24
+```
+
+则是由于/usr/lib/php/pear没有添加到php的`include_path`
+
+修改`/etc/php.ini`,添加`include_path = "/usr/lib/php/pear"`，运行`phpcs -h`无误即可
 
 ![screen](screen.png)
 
