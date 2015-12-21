@@ -62,6 +62,7 @@ set smartcase                " 有一个或以上大写字母时仍大小敏感
 set foldenable               " 代码折叠
 set foldmethod=indent
 set foldlevel=99             
+let autosave=5
 
 " 代码折叠自定义快捷键
 let g:FoldMethod = 0
