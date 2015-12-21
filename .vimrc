@@ -62,7 +62,14 @@ set smartcase                " 有一个或以上大写字母时仍大小敏感
 set foldenable               " 代码折叠
 set foldmethod=indent
 set foldlevel=99             
-let autosave=5
+
+" autosave
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+let g:auto_save_silent = 1  " do not display the auto-save notification
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+let g:auto_save_keep_marks = 0
 
 " 代码折叠自定义快捷键
 let g:FoldMethod = 0
