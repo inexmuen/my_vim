@@ -100,3 +100,16 @@ PHP Fatal error:  Class 'PHP_CodeSniffer_CLI' not found in /usr/bin/phpcs on lin
 ![screen](screen.png)
 
 可以参考:[http://www.cnblogs.com/junnyfeng/p/3633697.html](http://www.cnblogs.com/junnyfeng/p/3633697.html)
+
+## colorscheme
+
+更改为`solarized`
+
+- `git clone git://github.com/altercation/solarized.git`
+- iterm2主题切换: 到 `solarized/iterm2-colors-solarized` 下双击 `Solarized Dark.itermcolors` 和 `Solarized Light.itermcolors` 两个文件就可以把配置文件导入到 iTerm 里
+- vim主题切换: 
+	- `cd vim-colors-solarized/colors`
+	- `cp solarized.vim ~/.vim/colors/`
+	- `vi ~/.vimrc`
+	- `colorscheme solarized`
+- ok
