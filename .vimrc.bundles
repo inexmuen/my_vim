@@ -14,15 +14,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
-Plugin 'basepi/vim-conque'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-commentary'
-Plugin 'sjl/gundo.vim'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 
 " python
@@ -37,22 +34,8 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'joonty/vim-phpqa'
 
-" golang
-Plugin 'fatih/vim-go'
-Plugin 'dgryski/vim-godef'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-
-" markdown
-Plugin 'plasticboy/vim-markdown'
-
-" 多光标
-Plugin 'terryma/vim-multiple-cursors'
-
 " 快速注释
 Plugin 'scrooloose/nerdcommenter'
-
-" 对齐线
-Plugin 'nathanaelkane/vim-indent-guides'
 
 " 全局搜索
 Plugin 'rking/ag.vim'
@@ -63,14 +46,8 @@ Plugin 'vim-scripts/last_edit_marker.vim'
 " powerline
 Plugin 'powerline/powerline'
 
-" gitgutter
-Plugin 'airblade/vim-gitgutter'
-
 " gitv
 Plugin 'vim-scripts/gitv'
-
-" autosave
-Plugin '907th/vim-auto-save'
 
 call vundle#end()
 filetype plugin indent on
