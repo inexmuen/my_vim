@@ -64,12 +64,12 @@ set foldmethod=indent
 set foldlevel=99             
 
 " autosave
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-let g:auto_save_silent = 1  " do not display the auto-save notification
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
-let g:auto_save_keep_marks = 0
+" let g:auto_save = 1  " enable AutoSave on Vim startup
+" let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+" let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+" let g:auto_save_silent = 1  " do not display the auto-save notification
+" let g:auto_save_events = ["InsertLeave", "TextChanged"]
+" let g:auto_save_keep_marks = 0
 
 " 代码折叠自定义快捷键
 let g:FoldMethod = 0
@@ -228,12 +228,12 @@ let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=35
 
 " *********************** 快速跳转 ******************************
-let g:EasyMotion_smartcase=1
-map <leader><leader>h <Plug>(easymotion-linebackward)
-map <leader><leader>j <Plug>(easymotion-j)
-map <leader><leader>k <Plug>(easymotion-k)
-map <leader><leader>l <Plug>(easymotion-lineforward)
-map <leader><leader>. <Plug>(easymotion-repeat)
+" let g:EasyMotion_smartcase=1
+" map <leader><leader>h <Plug>(easymotion-linebackward)
+" map <leader><leader>j <Plug>(easymotion-j)
+" map <leader><leader>k <Plug>(easymotion-k)
+" map <leader><leader>l <Plug>(easymotion-lineforward)
+" map <leader><leader>. <Plug>(easymotion-repeat)
 
 " *********************** 语法检查 ******************************
 let g:syntastic_error_symbol='>>'
@@ -275,7 +275,7 @@ let g:pyflakes_use_quickfix = 0
 let python_highlight_all = 1
 
 " *********************** markdown 插件设置 *********************
-let g:vim_markdown_folding_disable = 1
+" let g:vim_markdown_folding_disable = 1
 
 " 多光标选中编辑设置
 " let g:multi_cursor_use_default_mapping = 0
@@ -328,16 +328,16 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符�
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " ********************** 对齐线设置 ****************************
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1 
-set ts=4 sw=4 et
-let g:indent_guides_start_level = 2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-hi IndentGuidesOdd guibg=red ctermbg=3
+" let g:indent_guides_enable_on_vim_startup = 0
+" let g:indent_guides_auto_colors = 0
+" let g:indent_guides_guide_size = 1 
+" set ts=4 sw=4 et
+" let g:indent_guides_start_level = 2
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+" hi IndentGuidesOdd guibg=red ctermbg=3
 
-hi IndentGuidesEven guibg=green ctermbg=4
+" hi IndentGuidesEven guibg=green ctermbg=4
 
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'vertical-split'
@@ -386,7 +386,7 @@ let g:Powerline_symbols = 'fancy'
 let Powerline_symbols='compatible'    
 
 " gitgutter设置
-let g:gitgutter_map_keys = 0
-let g:gitgutter_enabled = 0
-let g:gitgutter_highlight_lines = 1
-nnoremap <leader>gs :GitGutterToggle<CR>
+" let g:gitgutter_map_keys = 0
+" let g:gitgutter_enabled = 0
+" let g:gitgutter_highlight_lines = 1
+" nnoremap <leader>gs :GitGutterToggle<CR>
