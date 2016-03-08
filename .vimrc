@@ -7,6 +7,7 @@ endif
 
 " 在插入模式下MAC下的delete不能删除问题
 set backspace=2
+set colorcolumn=80
 
 "--------------- leader设定 -------------
 let mapleader = ','
