@@ -25,7 +25,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-colorscheme solarized         " 配色主题
+colorscheme blackbeauty         " 配色主题
 
 set autoread                 " 文件修改之后自动载入。
 set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
