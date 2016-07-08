@@ -103,6 +103,11 @@ PHP Fatal error:  Class 'PHP_CodeSniffer_CLI' not found in /usr/bin/phpcs on lin
 
 ## colorscheme
 
+### 主题搭配
+
+    - vim-solarized + iterm-solarized
+    - vim-blackbeauty + iterm-dracula
+
 更改为`solarized`
 
 - `git clone git://github.com/altercation/solarized.git`
