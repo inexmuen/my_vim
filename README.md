@@ -32,6 +32,7 @@ F8                          		|按PEP8标准格式化文件
 :Ag create_order --python   		|全局搜索"create_order"
 '.                          		|移动光标到上一次的修改行
 `.                          		|移动光标到上一次的修改点
+``										|last jump
 CTRL+O									|go back
 CTRL+I									|go forwards
 control+y/g'Z               		|可跨文件跳转到上次修改位置(last_edit_maker提供功能)
