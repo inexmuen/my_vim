@@ -37,8 +37,8 @@ CTRL+O									|go back
 CTRL+I									|go forwards
 control+y/g'Z               		|可跨文件跳转到上次修改位置(last_edit_maker提供功能)
 :new/e/vs/sp/tabe filename  		|新建/当前tab/纵向/横向/新tab 打开 filename
-CTRL+c & COMMAND+v          		|vim复制，主机粘贴
-COMMAND+c & CTRL+v          		|主机复制，vim粘贴
+CTRL+c & COMMAND+v          		|vim复制，主机粘贴(带格式复制 & 粘贴)
+COMMAND+c & CTRL+v          		|主机复制，vim粘贴(带格式复制 & 粘贴)
 ,a                          		|insert模式下php文件autocomplete，由phpcomplete的<C-x><C-o> inoremap而来
 ,gs                         		|显示文件的git更改,类似于git diff命令的显示效果
 :Gitv                       		|显示项目版本库的更改，类似于tig的效果
