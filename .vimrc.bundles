@@ -62,6 +62,7 @@ Plugin 'vim-scripts/last_edit_marker.vim'
 
 " powerline
 Plugin 'powerline/powerline'
+Plugin 'bling/vim-airline'
 
 " gitgutter
 Plugin 'airblade/vim-gitgutter'

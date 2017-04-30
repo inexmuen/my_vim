@@ -386,6 +386,12 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols='compatible'    
 
+" airline状态栏设置
+let g:airline_theme="dark"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 " gitgutter设置
 let g:gitgutter_map_keys = 0
 let g:gitgutter_enabled = 0
