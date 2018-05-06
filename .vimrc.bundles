@@ -14,7 +14,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
-Plugin 'basepi/vim-conque'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
