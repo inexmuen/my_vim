@@ -69,5 +69,8 @@ Plugin 'airblade/vim-gitgutter'
 " gitv
 Plugin 'vim-scripts/gitv'
 
+" wakatime
+Plugin 'wakatime/vim-wakatime'
+
 call vundle#end()
 filetype plugin indent on
