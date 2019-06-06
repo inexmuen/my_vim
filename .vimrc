@@ -5,6 +5,8 @@ if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
 
+set nomodeline
+
 " 在插入模式下MAC下的delete不能删除问题
 set backspace=2
 set colorcolumn=80
